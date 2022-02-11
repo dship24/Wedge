@@ -1,6 +1,7 @@
 package com.company;
 
 import java.sql.*;
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -19,7 +20,8 @@ public class Main {
         System.out.println("---------------");
         System.out.println("1. Add Item");
         System.out.println("2. View Ticket");
-        System.out.println("3. Quit");
+        System.out.println("3. Past Orders");
+        System.out.println("4. Quit");
         System.out.println("---------------");
         System.out.println();
 
@@ -101,7 +103,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else if (user == 3 && item_no == 56) {
@@ -114,10 +116,10 @@ public class Main {
                                                         System.out.print("> ");
                                                         int size = i.nextInt();
                                                         if (size == 1) {
-                                                            notes.append("Size: Small, ");
+                                                            notes.append("Size: Small; ");
                                                             break;
                                                         } else if (size == 2) {
-                                                            notes.append("Size: Large, ");
+                                                            notes.append("Size: Large; ");
                                                             price += 4;
                                                             break;
                                                         } else if (size == 3) {
@@ -149,55 +151,55 @@ public class Main {
                                                         int sauce = i.nextInt();
                                                         switch (sauce) {
                                                             case 1 -> {
-                                                                notes.append("Sauce: Plain, ");
+                                                                notes.append("Sauce: Plain; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Sauce: BBQ, ");
+                                                                notes.append("Sauce: BBQ; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Sauce: Honey BBQ, ");
+                                                                notes.append("Sauce: Honey BBQ; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Sauce: Sweet & Spicy, ");
+                                                                notes.append("Sauce: Sweet & Spicy; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Sauce: Teriyaki, ");
+                                                                notes.append("Sauce: Teriyaki; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
-                                                                notes.append("Sauce: Buffalo Mild, ");
+                                                                notes.append("Sauce: Buffalo Mild; ");
                                                                 active2 = false;
                                                             }
                                                             case 7 -> {
-                                                                notes.append("Sauce: Buffalo Hot, ");
+                                                                notes.append("Sauce: Buffalo Hot; ");
                                                                 active2 = false;
                                                             }
                                                             case 8 -> {
-                                                                notes.append("Sauce: Garlic Parmesan, ");
+                                                                notes.append("Sauce: Garlic Parmesan; ");
                                                                 active2 = false;
                                                             }
                                                             case 9 -> {
-                                                                notes.append("Sauce: Spicy Asian, ");
+                                                                notes.append("Sauce: Spicy Asian; ");
                                                                 active2 = false;
                                                             }
                                                             case 10 -> {
-                                                                notes.append("Sauce: Lemon Pepper, ");
+                                                                notes.append("Sauce: Lemon Pepper; ");
                                                                 active2 = false;
                                                             }
                                                             case 11 -> {
-                                                                notes.append("Sauce: Reaper, ");
+                                                                notes.append("Sauce: Reaper; ");
                                                                 active2 = false;
                                                             }
                                                             case 12 -> {
-                                                                notes.append("Sauce: Mango Habanero, ");
+                                                                notes.append("Sauce: Mango Habanero; ");
                                                                 active2 = false;
                                                             }
                                                             case 13 -> {
-                                                                notes.append("Sauce: Honey Gold, ");
+                                                                notes.append("Sauce: Honey Gold; ");
                                                                 active2 = false;
                                                             }
                                                             case 14 -> active2 = false;
@@ -215,10 +217,10 @@ public class Main {
                                                         System.out.print("> ");
                                                         int type = i.nextInt();
                                                         if (type == 1) {
-                                                            notes.append("Type: Regular, ");
+                                                            notes.append("Type: Regular; ");
                                                             active2 = false;
                                                         } else if (type == 2) {
-                                                            notes.append("Type: Extra Crispy, ");
+                                                            notes.append("Type: Extra Crispy; ");
                                                             active2 = false;
                                                         } else if (type == 3) {
                                                             active2 = false;
@@ -240,21 +242,21 @@ public class Main {
                                                         int count = i.nextInt();
                                                         switch (count) {
                                                             case 1 -> {
-                                                                notes.append("Count: 8pc, ");
+                                                                notes.append("Count: 8pc; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Count: 16pc, ");
+                                                                notes.append("Count: 16pc; ");
                                                                 price += 7;
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Count: 24pc, ");
+                                                                notes.append("Count: 24pc; ");
                                                                 price += 13;
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Count: 32pc, ");
+                                                                notes.append("Count: 32pc; ");
                                                                 price += 18;
                                                                 active2 = false;
                                                             }
@@ -341,7 +343,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else if (user == 3 && !notes.toString().contains("Size: ")) {
@@ -358,7 +360,7 @@ public class Main {
                                                             case 1:
                                                                 boolean active3 = true;
                                                                 do {
-                                                                    notes.append("Size: Small, ");
+                                                                    notes.append("Size: Small; ");
                                                                     System.out.println();
                                                                     System.out.println("What crust would you like?");
                                                                     System.out.println("1. Original");
@@ -368,15 +370,15 @@ public class Main {
                                                                     int crust = i.nextInt();
                                                                     switch (crust) {
                                                                         case 1 -> {
-                                                                            notes.append("Crust: Original, ");
+                                                                            notes.append("Crust: Original; ");
                                                                             active3 = false;
                                                                         }
                                                                         case 2 -> {
-                                                                            notes.append("Crust: Thin, ");
+                                                                            notes.append("Crust: Thin; ");
                                                                             active3 = false;
                                                                         }
                                                                         case 3 -> {
-                                                                            notes.append("Crust: Cauliflower, ");
+                                                                            notes.append("Crust: Cauliflower; ");
                                                                             price += 5;
                                                                             active3 = false;
                                                                         }
@@ -389,7 +391,7 @@ public class Main {
                                                                 active3 = true;
                                                                 price += 8;
                                                                 do {
-                                                                    notes.append("Size: Large, ");
+                                                                    notes.append("Size: Large; ");
                                                                     System.out.println();
                                                                     System.out.println("What crust would you like?");
                                                                     System.out.println("1. Original");
@@ -400,20 +402,20 @@ public class Main {
                                                                     int crust = i.nextInt();
                                                                     switch (crust) {
                                                                         case 1 -> {
-                                                                            notes.append("Crust: Original, ");
+                                                                            notes.append("Crust: Original; ");
                                                                             active3 = false;
                                                                         }
                                                                         case 2 -> {
-                                                                            notes.append("Crust: Thin, ");
+                                                                            notes.append("Crust: Thin; ");
                                                                             active3 = false;
                                                                         }
                                                                         case 3 -> {
-                                                                            notes.append("Crust: Deep Dish, ");
+                                                                            notes.append("Crust: Deep Dish; ");
                                                                             price += 2.50;
                                                                             active3 = false;
                                                                         }
                                                                         case 4 -> {
-                                                                            notes.append("Crust: Stuffed Crust, ");
+                                                                            notes.append("Crust: Stuffed Crust; ");
                                                                             price += 2.50;
                                                                             active3 = false;
                                                                         }
@@ -445,27 +447,27 @@ public class Main {
                                                         int sauce = i.nextInt();
                                                         switch (sauce) {
                                                             case 1 -> {
-                                                                notes.append("Sauce: Marinara, ");
+                                                                notes.append("Sauce: Marinara; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Sauce: BBQ, ");
+                                                                notes.append("Sauce: BBQ; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Sauce: Ranch, ");
+                                                                notes.append("Sauce: Ranch; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Sauce: Alfredo, ");
+                                                                notes.append("Sauce: Alfredo; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Sauce: Garlic Butter, ");
+                                                                notes.append("Sauce: Garlic Butter; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
-                                                                notes.append("Sauce: Pesto, ");
+                                                                notes.append("Sauce: Pesto; ");
                                                                 active2 = false;
                                                             }
                                                             case 7 -> active2 = false;
@@ -572,7 +574,7 @@ public class Main {
                                                         }
                                                     }
                                                     if (!list_of_toppings.isEmpty()) {
-                                                        notes.append("Toppings: ").append(list_of_toppings.delete(list_of_toppings.length()-1, list_of_toppings.length())).append(", ");
+                                                        notes.append("Toppings: ").append(list_of_toppings.delete(list_of_toppings.length()-1, list_of_toppings.length())).append("; ");
                                                     }
                                                 } else {
                                                     System.out.println("Error! Invalid Action!!");
@@ -651,7 +653,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else if (user == 3 && !notes.toString().contains("Toppings: ")) {
@@ -848,15 +850,15 @@ public class Main {
                                                     } while (active2);
                                                     if (!error) {
                                                         if (topping1 != null) {
-                                                            notes.append("Toppings: ").append(topping1).append(", ");
+                                                            notes.append("Toppings: ").append(topping1).append("; ");
                                                         }
                                                         if (topping2 != null) {
                                                             notes.delete(notes.length() - 2, notes.length());
-                                                            notes.append("+").append(topping2).append(", ");
+                                                            notes.append("+").append(topping2).append("; ");
                                                         }
                                                         if (topping3 != null) {
                                                             notes.delete(notes.length() - 2, notes.length());
-                                                            notes.append("+").append(topping3).append(", ");
+                                                            notes.append("+").append(topping3).append("; ");
                                                         }
                                                     }
                                                 } else if (user == 4 && !notes.toString().contains("Sauce: ")) {
@@ -875,27 +877,27 @@ public class Main {
                                                         int sauce = i.nextInt();
                                                         switch (sauce) {
                                                             case 1 -> {
-                                                                notes.append("Sauce: Marinara, ");
+                                                                notes.append("Sauce: Marinara; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Sauce: BBQ, ");
+                                                                notes.append("Sauce: BBQ; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Sauce: Ranch, ");
+                                                                notes.append("Sauce: Ranch; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Sauce: Alfredo, ");
+                                                                notes.append("Sauce: Alfredo; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Sauce: Garlic Butter, ");
+                                                                notes.append("Sauce: Garlic Butter; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
-                                                                notes.append("Sauce: Pesto, ");
+                                                                notes.append("Sauce: Pesto; ");
                                                                 active2 = false;
                                                             }
                                                             case 7 -> active2 = false;
@@ -971,7 +973,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else {
@@ -1087,52 +1089,52 @@ public class Main {
                                                             combo_drink = i.nextInt();
                                                             switch (combo_drink) {
                                                                 case 1 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Water, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Water; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 2 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Sprite, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Sprite; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 3 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Coke, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Coke; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 4 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Root Beer, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Root Beer; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 5 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Lemonade, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Lemonade; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 6 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Powerade, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Powerade; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 7 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Fanta Orange, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Fanta Orange; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 8 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Dr Pepper, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Dr Pepper; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 9 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Sweet Tea, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Sweet Tea; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
                                                                 case 10 -> {
-                                                                    notes.append("Combo: ").append(fries).append("+Unsweet Tea, ");
+                                                                    notes.append("Combo: ").append(fries).append("+Unsweet Tea; ");
                                                                     active2 = false;
                                                                     price += 2.50;
                                                                 }
@@ -1145,7 +1147,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else {
@@ -1232,23 +1234,23 @@ public class Main {
                                                         int pasta = i.nextInt();
                                                         switch (pasta) {
                                                             case 1 -> {
-                                                                notes.append("Type: Lasagna, ");
+                                                                notes.append("Type: Lasagna; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Type: Chicken Alfredo, ");
+                                                                notes.append("Type: Chicken Alfredo; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Type: Chicken Parmesan, ");
+                                                                notes.append("Type: Chicken Parmesan; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Type: Rotel Chicken Spaghetti, ");
+                                                                notes.append("Type: Rotel Chicken Spaghetti; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Type: Spaghetti & Meat Sauce, ");
+                                                                notes.append("Type: Spaghetti & Meat Sauce; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
@@ -1263,7 +1265,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else {
@@ -1335,7 +1337,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else {
@@ -1414,7 +1416,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else if (user == 3 && (item_no == 6 || item_no == 7)){
@@ -1429,11 +1431,11 @@ public class Main {
                                                         int size = i.nextInt();
                                                         switch (size) {
                                                             case 1 -> {
-                                                                notes.append("Size: Small, ");
+                                                                notes.append("Size: Small; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Size: Large, ");
+                                                                notes.append("Size: Large; ");
                                                                 price += 4;
                                                                 active2 = false;
                                                             }
@@ -1453,11 +1455,11 @@ public class Main {
                                                         int size = i.nextInt();
                                                         switch (size) {
                                                             case 1 -> {
-                                                                notes.append("Size: Small, ");
+                                                                notes.append("Size: Small; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Size: Large, ");
+                                                                notes.append("Size: Large; ");
                                                                 price += 5;
                                                                 active2 = false;
                                                             }
@@ -1480,23 +1482,23 @@ public class Main {
                                                         int fruit = i.nextInt();
                                                         switch (fruit) {
                                                             case 1 -> {
-                                                                notes.append("Fruit: Apple, ");
+                                                                notes.append("Fruit: Apple; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Fruit: Cherry, ");
+                                                                notes.append("Fruit: Cherry; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Fruit: Blueberry, ");
+                                                                notes.append("Fruit: Blueberry; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Fruit: Peach, ");
+                                                                notes.append("Fruit: Peach; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Fruit: Strawberry, ");
+                                                                notes.append("Fruit: Strawberry; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> active2 = false;
@@ -1575,7 +1577,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else if (user == 3 && (item_no == 2 || item_no == 4) && !notes.toString().contains("Type: ")) {
@@ -1597,39 +1599,39 @@ public class Main {
                                                         int drink = i.nextInt();
                                                         switch (drink) {
                                                             case 1 -> {
-                                                                notes.append("Type: Sprite, ");
+                                                                notes.append("Type: Sprite; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Type: Coke, ");
+                                                                notes.append("Type: Coke; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Type: Root Beer, ");
+                                                                notes.append("Type: Root Beer; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Type: Lemonade, ");
+                                                                notes.append("Type: Lemonade; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Type: Powerade, ");
+                                                                notes.append("Type: Powerade; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
-                                                                notes.append("Type: Fanta Orange, ");
+                                                                notes.append("Type: Fanta Orange; ");
                                                                 active2 = false;
                                                             }
                                                             case 7 -> {
-                                                                notes.append("Type: Dr Pepper, ");
+                                                                notes.append("Type: Dr Pepper; ");
                                                                 active2 = false;
                                                             }
                                                             case 8 -> {
-                                                                notes.append("Type: Sweet Tea, ");
+                                                                notes.append("Type: Sweet Tea; ");
                                                                 active2 = false;
                                                             }
                                                             case 9 -> {
-                                                                notes.append("Type: Unsweet Tea, ");
+                                                                notes.append("Type: Unsweet Tea; ");
                                                                 active2 = false;
                                                             }
                                                             case 10 -> active2 = false;
@@ -1653,31 +1655,31 @@ public class Main {
                                                         int drink = i.nextInt();
                                                         switch (drink) {
                                                             case 1 -> {
-                                                                notes.append("Type: Sprite, ");
+                                                                notes.append("Type: Sprite; ");
                                                                 active2 = false;
                                                             }
                                                             case 2 -> {
-                                                                notes.append("Type: Coke, ");
+                                                                notes.append("Type: Coke; ");
                                                                 active2 = false;
                                                             }
                                                             case 3 -> {
-                                                                notes.append("Type: Root Beer, ");
+                                                                notes.append("Type: Root Beer; ");
                                                                 active2 = false;
                                                             }
                                                             case 4 -> {
-                                                                notes.append("Type: Lemonade, ");
+                                                                notes.append("Type: Lemonade; ");
                                                                 active2 = false;
                                                             }
                                                             case 5 -> {
-                                                                notes.append("Type: Powerade, ");
+                                                                notes.append("Type: Powerade; ");
                                                                 active2 = false;
                                                             }
                                                             case 6 -> {
-                                                                notes.append("Type: Fanta Orange, ");
+                                                                notes.append("Type: Fanta Orange; ");
                                                                 active2 = false;
                                                             }
                                                             case 7 -> {
-                                                                notes.append("Type: Dr Pepper, ");
+                                                                notes.append("Type: Dr Pepper; ");
                                                                 active2 = false;
                                                             }
                                                             case 8 -> active2 = false;
@@ -1756,7 +1758,7 @@ public class Main {
                                                     System.out.println();
                                                     System.out.println("----Notes----");
                                                     System.out.print("> ");
-                                                    notes.append(s.nextLine()).append(", ");
+                                                    notes.append(s.nextLine()).append("; ");
                                                 } else if (user == 1) {
                                                     break;
                                                 } else {
@@ -1798,23 +1800,23 @@ public class Main {
                     System.out.println("------------------------");
                     System.out.println();
                 } else {
-                    System.out.println("----------------------");
-                    System.out.println("Your Ticket : ");
-                    Iterator<String> q = ticket.iterator();
-                    float total = 0;
-                    while (q.hasNext()) {
-                        Object e = q.next();
-                        System.out.println(e);
-                        String a = e.toString();
-                        total += Float.parseFloat(a.substring(a.indexOf("$") + 1, a.indexOf("$") + 6).trim());
-                    }
-                    System.out.println();
-                    System.out.print("Total : $");
-                    System.out.printf("%.2f", total);
-                    System.out.println();
-                    System.out.println("----------------------");
                     boolean active = true;
                     do {
+                        System.out.println("----------------------");
+                        System.out.println("Your Ticket : ");
+                        Iterator<String> q = ticket.iterator();
+                        float total = 0;
+                        while (q.hasNext()) {
+                            Object e = q.next();
+                            System.out.println(e);
+                            String a = e.toString();
+                            total += Float.parseFloat(a.substring(a.indexOf("$") + 1, a.indexOf("$") + 6).trim());
+                        }
+                        System.out.println();
+                        System.out.print("Total : $");
+                        System.out.printf("%.2f", total);
+                        System.out.println();
+                        System.out.println("----------------------");
                         System.out.println();
                         System.out.println("1. Delete an Item");
                         System.out.println("2. Place Order");
@@ -1894,7 +1896,7 @@ public class Main {
                                 String customer_name = s.nextLine();
                                 System.out.println();
                                 String schedule;
-                                java.sql.Date schedule_day = null;
+                                Date schedule_day = null;
                                 String schedule_time = null;
                                 String scheduled_day;
                                 do {
@@ -1903,13 +1905,14 @@ public class Main {
                                     schedule = s.nextLine();
                                     if (schedule.equalsIgnoreCase("Y")) {
                                         do {
+                                            System.out.println();
                                             System.out.println("What date is your order scheduled for?");
                                             System.out.println("Ex: MM/dd/yyyy");
                                             System.out.print("> ");
                                             scheduled_day = s.nextLine();
                                             try {
                                                 java.util.Date utilDate = new SimpleDateFormat("MM/dd/yyyy").parse(scheduled_day);
-                                                schedule_day = new java.sql.Date(utilDate.getTime());
+                                                schedule_day = new Date(utilDate.getTime());
                                                 break;
                                             } catch (ParseException e) {
                                                 System.out.println("Error! Invalid Date!!");
@@ -1972,6 +1975,7 @@ public class Main {
                                         System.exit(1);
                                     }
                                     ticket.clear();
+                                    System.out.println();
                                     System.out.println("---------------------------------");
                                     System.out.println("|  Your order has been placed!  |");
                                     System.out.println("---------------------------------");
@@ -1985,6 +1989,40 @@ public class Main {
                 }
             }
             case 3 -> {
+                System.out.println();
+                System.out.println("Who's orders do you want to view? or [Quit]");
+                System.out.print("> ");
+                String orders = s.nextLine();
+                if (!orders.equalsIgnoreCase("Quit")) {
+                    try {
+                        Connection connection = DriverManager.getConnection("jdbc:postgresql:slice");
+                        PreparedStatement st = connection.prepareStatement("SELECT * FROM ticket WHERE ticket.customer = ?");
+                        st.setString(1, orders);
+                        ResultSet rs = st.executeQuery();
+                        System.out.println();
+                        while (rs.next()) {
+                            System.out.println("Type: " + rs.getString("type"));
+                            if (rs.getString("type").equalsIgnoreCase("delivery")) {
+                                System.out.println("Address: " + rs.getString("address"));
+                            }
+                            if (rs.getString("day") != null) {
+                                System.out.println("Day: " + rs.getString("day"));
+                            }
+                            if (rs.getString("time") != null) {
+                                System.out.println("Time: " + rs.getString("time"));
+                            }
+                            System.out.println("Items: ");
+                            for (int u = 0; u < rs.getString("items").split(",").length; u++) {
+                                System.out.println(rs.getString("items").split(",")[u]);
+                            }
+                            System.out.println("--------------------------------");
+                        }
+                    } catch (SQLException e) {
+                        System.out.println("That person does not have any orders placed!");
+                    }
+                }
+            }
+            case 4 -> {
                 System.out.println("Are you sure you want to quit?");
                 System.out.println("(Any items on your current ticket will be discarded.)");
                 System.out.print("[Y/N] : ");

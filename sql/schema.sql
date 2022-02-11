@@ -1,5 +1,4 @@
 
-
 CREATE TABLE items (
 id BIGSERIAL NOT NULL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
@@ -107,8 +106,4 @@ INSERT INTO items (name, price, category) VALUES ('Water', 2.15, 'Drinks'),
 ('Anchovie-Crusted Pizza', 1.99, 'Secret Menu'),
 ('Ryan', 0.99, 'Secret Menu'),
 ('Lettuce Sausage Duck Pizza', 69.99, 'Secret Menu'),
-('Come Sauce', 26.99, 'Secret Menu'),
 ('Belle Delphine Bath Water', 29.99, 'Secret Menu');
-
-
-
